@@ -2,6 +2,8 @@ import random
 import sys
 import os
 
+os.system('cls' if os.name == 'nt' else 'clear')
+
 print("Welcome to PySlots! You start with $1000.")
 
 yes = ("yes", "y", "YES", "Y", "Yes", "yEs", "YeS", "yES")
@@ -9,17 +11,20 @@ money = 1000
 
 while True:
     bet = int(input("How much would you like to bet? "))
+    if bet <= money:
+        outcomes = ["Win", "Loss"]
+        result = random.choice(outcomes)
+        print(f"The result is: {result}")
 
-    outcomes = ["Win", "Loss"]
-    result = random.choice(outcomes)
-    print(f"The result is: {result}")
+        if result == "Win":
+            money += bet
+        else:
+            money -= bet
 
-    if result == "Win":
-        money += bet
-    else:
-        money -= bet
-
-    print(f"You now have: ${money}")
+        print(f"You now have: ${money}")
+    else: 
+        print("You do not have that much money.")
+    
 
     if money <= 0:
         print("GAME OVER! You have no more money left.")
