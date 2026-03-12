@@ -15,7 +15,7 @@ if game.lower() == "classic":
         bet = int(input("How much would you like to bet? "))
         if bet <= money:
             outcomes = ["Win", "Loss"]
-            result = random.choices(outcomes)
+            result = random.choices(outcomes)[0]
             print(f"The result is: {result}")
 
             if result == "Win":
