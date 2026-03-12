@@ -11,7 +11,7 @@ game = input("Welcome to PySlots! What game would you like to play? Classic or C
 
 if game.lower() == "classic":
     print("Welcome to Classic! You start with $1000.")
-   while True:
+    while True:
         bet = int(input("How much would you like to bet? "))
         if bet <= money:
             outcomes = ["Win", "Loss"]
